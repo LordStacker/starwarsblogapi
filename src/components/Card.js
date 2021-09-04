@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const Card = (props) => {
 
     return (
@@ -9,10 +10,7 @@ const Card = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.data.name}</h5>
                 <p className="card-text">
-                    Gender: {props.data.gender}
-                </p>
-                <p>
-                    weigth: {props.data.mass}
+                    {props.data.gender}
                 </p>
                 <Link to="/" className="btn btn-primary">Go somewhere</Link>
             </div>
