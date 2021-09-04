@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Card = (props) => {
+const CardVehicles = (props) => {
 
     return (
         <div className="card">
@@ -10,7 +10,7 @@ const Card = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.data.name}</h5>
                 <p className="card-text">
-                   Weight: {props.data.mass}
+                   Model: {props.data.model}
                 </p>
                 <Link to="/" className="btn btn-primary">Go somewhere</Link>
             </div>
@@ -18,4 +18,4 @@ const Card = (props) => {
     );
 }
 
-export default Card;
+export default CardVehicles;

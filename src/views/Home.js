@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
+import CardPlanets from '../components/CardPlanets';
+import CardVehicles from '../components/CardVehicles';
 
 const Home = () => {
     const [planets, setPlanets] = useState([]);
@@ -29,6 +31,12 @@ const Home = () => {
             .then(data => setVehicles(data.results))
             .catch(error => console.log(error))
     }, [])
+
+   /* myarray = [
+        {planetz: planets},
+        {peoplez: peoples},
+        {vehiclez: vehicles}
+    ]*/
     return (
         <>
             <div className="row">
@@ -40,13 +48,13 @@ const Home = () => {
             <div className="row">
                 <h1>Planets</h1>
                 <div className="scrolling-wrapper row flex-row flex-nowrap mt-3 pb-3 pt-2 mb-3">
-                    {planets.map((planet, i) => <div className="col-md-3"><Card data={planet} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                    {planets.map((planet, i) => <div className="col-md-3"><CardPlanets data={planet} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
                 </div>
             </div>
             <div className="row">
                 <h1>Vehicles</h1>
                 <div className="scrolling-wrapper row flex-row flex-nowrap mt-3 pb-3 pt-2 mb-3">
-                    {vehicles.map((vehicle, i) => <div className="col-md-3"><Card data={vehicle} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                    {vehicles.map((vehicle, i) => <div className="col-md-3"><CardVehicles data={vehicle} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
                 </div>
             </div>
         </>
