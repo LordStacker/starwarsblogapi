@@ -12,7 +12,7 @@ const CardPlanets = (props) => {
                 <p className="card-text">
                     Atmosphere: {props.data.terrain}
                 </p>
-                <Link to="/" className="btn btn-primary">Go somewhere</Link>
+                <Link to="/1" className="btn btn-primary">Go somewhere</Link>
             </div>
         </div>
     );

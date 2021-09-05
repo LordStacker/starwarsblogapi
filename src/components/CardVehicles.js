@@ -12,7 +12,7 @@ const CardVehicles = (props) => {
                 <p className="card-text">
                    Model: {props.data.model}
                 </p>
-                <Link to="/" className="btn btn-primary">Go somewhere</Link>
+                <Link to="/1" className="btn btn-primary">Go somewhere</Link>
             </div>
         </div>
     );

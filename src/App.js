@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './views/Home';
+import Jumbotron from './components/Jumbotron';
 
 function App() {
   return (<Router>
@@ -12,6 +13,9 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route>
+        <Route exact path="/1">
+          <Jumbotron/>
+        </Route>          
         <Route render={() => <h1>Not found</h1>}></Route>
       </Switch>
     </Route>
