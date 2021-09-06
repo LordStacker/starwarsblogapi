@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
+//{`/details/${props.data.url}`}
 const Card = (props) => {
 
     return (
@@ -12,7 +12,8 @@ const Card = (props) => {
                 <p className="card-text">
                    Weight: {props.data.mass}
                 </p>
-                <Link to="/1" className="btn btn-primary">Go somewhere</Link>
+                <Link to={`/details/${props.data.url}`} className="btn btn-primary">Go somewhere</Link>
+                <button className="bi bi-heart btn btn-warning ms-2"></button>
             </div>
         </div>
     );

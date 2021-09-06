@@ -13,7 +13,7 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route exact path="/1">
+        <Route path="/people/:id">
           <Jumbotron/>
         </Route>          
         <Route render={() => <h1>Not found</h1>}></Route>
