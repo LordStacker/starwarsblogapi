@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Jumbotron from './components/Jumbotron';
+import injectContext from './store/appContext';
 
 function App() {
   return (<Router>
@@ -13,7 +14,7 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route path="/people/:id">
+        <Route path="/people/:id" component={Jumbotron}>
           <Jumbotron/>
         </Route>          
         <Route render={() => <h1>Not found</h1>}></Route>
@@ -23,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);

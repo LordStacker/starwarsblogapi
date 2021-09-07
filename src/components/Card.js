@@ -12,7 +12,7 @@ const Card = (props) => {
                 <p className="card-text">
                    Weight: {props.data.mass}
                 </p>
-                <Link to={`/details/${props.data.url}`} className="btn btn-primary">Go somewhere</Link>
+                <Link to={`/Jumbotron/${props.data.url}`} className="btn btn-primary">Go somewhere</Link>
                 <button className="bi bi-heart btn btn-warning ms-2"></button>
             </div>
         </div>
