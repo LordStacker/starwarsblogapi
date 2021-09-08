@@ -5,7 +5,9 @@ import CardPlanets from '../components/CardPlanets';
 import CardVehicles from '../components/CardVehicles';
 
 const Home = () => {
+    //using flux
     const { store, actions } = useContext(Context);
+    //States
     useEffect(() => {
         actions.getPlanets();
     }, [])
@@ -15,6 +17,7 @@ const Home = () => {
     useEffect(() =>{
         actions.getVehicles();
     }, [])
+
     return (
         <>
             <div className="row">

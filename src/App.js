@@ -5,18 +5,19 @@ import Navbar from './components/Navbar';
 import Home from './views/Home';
 import Jumbotron from './components/Jumbotron';
 import injectContext from './store/appContext';
+import JumbotronPlanets from './components/JumbotronPlanets';
 
 function App() {
   return (<Router>
-    <Navbar/>
+    <Navbar />
     <Route>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
-        <Route path="/people/:id" component={Jumbotron}>
-          <Jumbotron/>
-        </Route>          
+        <Route path="/detailplanet/:id" component={JumbotronPlanets}>
+          <JumbotronPlanets />
+        </Route>
         <Route render={() => <h1>Not found</h1>}></Route>
       </Switch>
     </Route>

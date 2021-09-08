@@ -3,7 +3,8 @@ export const getState = ({ setStore, getStore, getActions }) => {
         store: {
             planets: [],
             peoples: [],
-            vehicles: []
+            vehicles: [],
+            details: {}
         },
         actions: {
             getPlanets: () => {
@@ -25,7 +26,20 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     method: "GET",
                     headers: { "Content-Type": "application/json" }
                 }).then(response => response.json())
-                    .then(data => setStore({vehicles: data.results}))
+                    .then(data => setStore({ vehicles: data.results }))
+            },
+            getDetailPlanet: (a) => {
+                const actions = getActions();
+                let url = 'https://swapi.dev/api/planets/' + a;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        actions.getData(data);
+                    })
+            },
+            getData: (data) => {
+                setStore({ details: data })
             }
         },
     };
