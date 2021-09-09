@@ -10,9 +10,9 @@ const CardPlanets = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.data.name}</h5>
                 <p className="card-text">
-                    Atmosphere: {props.data.terrain}
+                    Surface: {props.data.terrain}
                 </p>
-                <Link to={`/detailplanet/${props.data.url.match(/\d/g)}`} className="btn btn-primary">Go somewhere</Link>
+                <Link to={`/detail/planet/${props.data.url.match(/\d/g)}`} className="btn btn-primary">Go somewhere</Link>
                 <button className="bi bi-heart btn btn-warning ms-2"></button>
             </div>
         </div>

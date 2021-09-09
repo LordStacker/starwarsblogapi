@@ -6,6 +6,7 @@ import Home from './views/Home';
 import Jumbotron from './components/Jumbotron';
 import injectContext from './store/appContext';
 import JumbotronPlanets from './components/JumbotronPlanets';
+import JumbotronVehicles from './components/JumbotronVehicles';
 
 function App() {
   return (<Router>
@@ -15,8 +16,14 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/detailplanet/:id" component={JumbotronPlanets}>
+        <Route path="/detail/planet/:id" component={JumbotronPlanets}>
           <JumbotronPlanets />
+        </Route>
+        <Route path="/detail/character/:id" component={Jumbotron}>
+          <Jumbotron />
+        </Route>
+        <Route path="/detail/vehicle/:id" component={JumbotronVehicles}>
+          <JumbotronVehicles />
         </Route>
         <Route render={() => <h1>Not found</h1>}></Route>
       </Switch>

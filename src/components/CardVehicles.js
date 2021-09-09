@@ -12,7 +12,7 @@ const CardVehicles = (props) => {
                 <p className="card-text">
                    Model: {props.data.model}
                 </p>
-                <Link to={`/details/${props.data.url}`} className="btn btn-primary">Go somewhere</Link>
+                <Link to={`${`/detail/vehicle/${props.data.url.match(/\d/g)}`}`} className="btn btn-primary">Go somewhere</Link>
                 <button className="bi bi-heart btn btn-warning ms-2"></button>
             </div>
         </div>

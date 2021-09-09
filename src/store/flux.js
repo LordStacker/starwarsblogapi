@@ -38,6 +38,27 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         actions.getData(data);
                     })
             },
+            getDetailCharacter: (a) => {
+                const actions = getActions();
+                let url = 'https://swapi.dev/api/people/' + a;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        actions.getData(data);
+                    })
+            },
+            getDetailVehicles: (a) => {
+                const actions = getActions();
+                let url = 'https://swapi.dev/api/vehicles/' + a;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        actions.getData(data);
+                    })
+            },
+
             getData: (data) => {
                 setStore({ details: data })
             }
