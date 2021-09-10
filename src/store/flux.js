@@ -29,9 +29,9 @@ export const getState = ({ setStore, getStore, getActions }) => {
                 }).then(response => response.json())
                     .then(data => setStore({ vehicles: data.results }))
             },
-            getDetailPlanet: (a) => {
+            getDetailPlanet: (plan) => {
                 const actions = getActions();
-                let url = 'https://swapi.dev/api/planets/' + a;
+                let url = 'https://swapi.dev/api/planets/' + plan;
 
                 fetch(url)
                     .then(response => response.json())
@@ -39,9 +39,9 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         actions.getData(data);
                     })
             },
-            getDetailCharacter: (a) => {
+            getDetailCharacter: (char) => {
                 const actions = getActions();
-                let url = 'https://swapi.dev/api/people/' + a;
+                let url = 'https://swapi.dev/api/people/' + char;
 
                 fetch(url)
                     .then(response => response.json())
@@ -49,9 +49,9 @@ export const getState = ({ setStore, getStore, getActions }) => {
                         actions.getData(data);
                     })
             },
-            getDetailVehicles: (a) => {
+            getDetailVehicles: (vehicle) => {
                 const actions = getActions();
-                let url = 'https://swapi.dev/api/vehicles/' + a;
+                let url = 'https://swapi.dev/api/vehicles/' + vehicle;
 
                 fetch(url)
                     .then(response => response.json())
