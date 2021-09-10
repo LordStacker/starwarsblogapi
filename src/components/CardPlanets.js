@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+import {  useContext } from "react";
 
 
 const CardPlanets = (props) => {
+    const { store, actions } = useContext(Context);
+    const addToList = () => {
+        let nameFav = props.data.name;
+        console.log(nameFav);
+        actions.addFavorite(nameFav);
+    }
 
     return (
         <div className="card">
@@ -13,7 +21,7 @@ const CardPlanets = (props) => {
                     Surface: {props.data.terrain}
                 </p>
                 <Link to={`/detail/planet/${props.data.url.match(/\d/g)}`} className="btn btn-primary">Go somewhere</Link>
-                <button className="bi bi-heart btn btn-warning ms-2"></button>
+                <button className="bi bi-heart btn btn-warning ms-2" onClick={() => addToList()}></button>
             </div>
         </div>
     );

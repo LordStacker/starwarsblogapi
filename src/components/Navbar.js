@@ -1,7 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import {  useContext } from "react";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
+    const { store, actions } = useContext(Context);
+    const deleteTask = (key) => {
+        actions.removeFavorite(key);
+    }
     return (
         <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,11 +19,14 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item dropdown">
-                                <Link className="nav-link dropdown-toggle" to="/"id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Favorites
                                 </Link>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><Link className="dropdown-item" to="/">Action</Link></li>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    {(store.favoriteList.length === 0) ? <li className="dropdown-item text-center">(empty)</li> :
+                                        store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
+                                            deleteTask(index);
+                                        }}><i class="bi bi-trash-fill"></i></button></span></li>)}
                                 </ul>
                             </li>
                         </ul>
