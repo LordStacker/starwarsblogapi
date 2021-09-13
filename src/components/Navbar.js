@@ -9,7 +9,6 @@ const Navbar = () => {
         actions.removeFavorite(key);
     }
     return (
-        <div className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/">Star Wars</Link>
@@ -23,8 +22,8 @@ const Navbar = () => {
                                     Favorites
                                 </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    {(store.favoriteList.length === 0) ? <li className="dropdown-item text-center">(empty)</li> :
-                                        store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
+                                    {(store.favoriteListing.length === 0) ? <li className="dropdown-item text-center">(empty)</li> :
+                                        store.favoriteListing.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
                                             deleteTask(index);
                                         }}><i class="bi bi-trash-fill"></i></button></span></li>)}
                                 </ul>
@@ -33,7 +32,6 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-        </div>
     )
 }
 export default Navbar;

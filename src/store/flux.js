@@ -5,7 +5,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
             peoples: [],
             vehicles: [],
             details: {},
-            favoriteList: [],
+            favoriteListing: [],
         },
         actions: {
             getPlanets: () => {
@@ -66,10 +66,10 @@ export const getState = ({ setStore, getStore, getActions }) => {
             addFavorite: (item) => {
                 const store = getStore();
                 const actions = getActions();
-                if (!store.favoriteList.includes(item)) {
-					setStore({ favoriteList: [...store.favoriteList, item] });
+                if (!store.favoriteListing.includes(item)) {
+					setStore({ favoriteListing: [...store.favoriteListing, item] });
 				} else {
-					const array = store.favoriteList;
+					const array = store.favoriteListing;
 					const condition = currentFavorite => currentFavorite === item;
 					let index = array.findIndex(condition);
 					if (index > -1) actions.removeFavorite(index);
@@ -77,8 +77,8 @@ export const getState = ({ setStore, getStore, getActions }) => {
             },
             removeFavorite: favoriteIndex => {
                 const store = getStore();
-				store.favoriteList.splice(favoriteIndex, 1);
-                setStore({ favoriteList: store.favoriteList });
+				store.favoriteListing.splice(favoriteIndex, 1);
+                setStore({ favoriteListing: store.favoriteListing });
 			},
         },
     };
